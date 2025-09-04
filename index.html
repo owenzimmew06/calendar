@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Calendar App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calendar-container">
+        <div class="header">
+            <button id="prevMonth">&lt;</button>
+            <h2 id="currentMonthYear"></h2>
+            <button id="nextMonth">&gt;</button>
+        </div>
+        <div class="weekdays">
+            <div>Sun</div>
+            <div>Mon</div>
+            <div>Tue</div>
+            <div>Wed</div>
+            <div>Thu</div>
+            <div>Fri</div>
+            <div>Sat</div>
+        </div>
+        <div class="days-grid" id="daysGrid">
+            <!-- Days will be populated by JavaScript -->
+        </div>
+
+        <div class="event-details" id="eventDetails">
+            <h3>Daily Schedule <span id="selectedDateText"></span></h3>
+            <div id="eventsList">
+                <!-- Events will be populated by JavaScript -->
+                <p class="no-events">No events for this day.</p>
+            </div>
+            <button id="addEventBtn">Add Event</button>
+        </div>
+    </div>
+
+    <!-- Event Modal -->
+    <div id="eventModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Add/Edit Event</h2>
+            <form id="eventForm">
+                <label for="eventTitle">Title:</label>
+                <input type="text" id="eventTitle" required>
+
+                <label for="eventTime">Time:</label>
+                <input type="time" id="eventTime">
+
+                <label for="eventDescription">Description:</label>
+                <textarea id="eventDescription"></textarea>
+
+                <input type="hidden" id="eventDate">
+                <input type="hidden" id="eventId">
+                <button type="submit">Save Event</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
